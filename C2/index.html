@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Eloquent Javascript | Chapter 2</title>
+
+</head>
+<body>
+<h1>This is just a random playground for JavaScript</h1>
+
+
+<script>
+
+    // Looping a Triangle - Mine =======================================================================================
+        /*let triangle = "#";
+        while (triangle.length < 8) {
+            console.log(triangle);
+            triangle += "#";
+        }*/
+
+    // Looping a Triangle - Book Solution ==============================================================================
+        /*for (let line = "#"; line.length < 8; line += "#") {
+            console.log(line);
+        }*/
+
+    // FizzBuzz - Mine =================================================================================================
+/*        for (var k = 1; k < 101; k++) {
+            if ((k % 3 === 0) && (k % 5 === 0)) {
+                console.log("FizzBuzz");
+            } else if ((k % 5 === 0) && (k % 3 !== 0)) {
+                console.log("Buzz");
+            } else if ((k % 5 !== 0) && (k % 3 === 0)) {
+                console.log("Fizz");
+            } else {
+                console.log(k);
+            }
+
+        }*/
+
+// FizzBuzz - Book Solution ========================================================================================
+/*        for (let n = 1; n <= 100; n++) {
+            let output = "";
+            if (n % 3 === 0) output += "Fizz";
+            if (n % 5 === 0) output += "Buzz";
+            console.log(output || n);
+        }*/
+
+// Chessboard - Mine ===================================================================================================
+    /*let chessBoard = "# # # #\n # # # #\n# # # #\n # # # #\n# # # #\n # # # #\n# # # #\n # # # #";
+    console.log(chessBoard);*/
+
+// Chessboard - Book Solution ==========================================================================================
+    let size = 8;
+    let chessBoard = "";
+
+    for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+            if ((x + y) % 2 === 0 ) {
+                chessBoard += "#";
+            } else {
+                chessBoard += " ";
+            }
+        }
+        chessBoard += "\n";
+    }
+
+    console.log(chessBoard);
+
+
+
+</script>
+</body>
+</html>
