@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Eloquent JavaScript | Chapter 3</title>
+
+</head>
+<body>
+<h1>Chapter 3 Playground</h1>
+<h3>Exercises:</h3>
+<h4>Minimum</h4>
+<h4>Recursive</h4>
+<h4>Bean Counting</h4>
+<script>
+
+    // Minimum - My Solution ===========================================================================================
+    /*function minimum(x, y) {
+        if (x < y) {
+            return x;
+        } else {
+            return y;
+        }
+    }
+    console.log(minimum(23, 25));*/
+
+    // Minimum - Book Solution =========================================================================================
+    /*function min(a, b) {
+        if (a < b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+    console.log(min(0, 10));
+    console.log(min(0, -10));*/
+
+    // Recursion - My Solution =========================================================================================
+    /*function isEven(number) {
+        if (number == 0) {
+            return true;
+        } else if (number == 1) {
+            return false;
+        } else if (number < 0) {
+            return isEven(-number);
+        } else {
+            return isEven(number - 2);
+        }
+    }
+
+    console.log(isEven(50));
+    console.log(isEven(75));
+    console.log(isEven(-1));*/
+
+    // Recursion - Book Solution =======================================================================================
+    /*function isEven(n) {
+        if (n == 0)
+            return true;
+        else if (n == 1)
+            return false;
+        else if (n < 0)
+            return isEven(-n);
+        else
+            return isEven (n - 2);
+    }
+
+    console.log(isEven(50));
+    console.log(isEven(75));
+    console.log(isEven(-1));*/
+
+    // Bean Counting - My Solution =====================================================================================
+    function countBs(string) {
+        let counter = 0;
+        for (let k = 0; k < string.length; k++) {
+            if (string.charAt(k) === "B") {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    console.log(countBs("BBC"));
+
+    function countChar(string, char) {
+        let counter = 0;
+        for (let m = 0; m < string.length; m++) {
+            if (string.charAt(m) === char) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    console.log(countChar("mississippi", "s"));
+
+    // Bean Counting - Book Solution ===================================================================================
+    function countChar(string, ch) {
+        var counted = 0;
+        for (var i = 0; i < string.length; i++)
+            if (string.charAt(i) == ch)
+                counted++;
+        return counted;
+    }
+
+    function countBs(string) {
+        return countChar(string, "B");
+    }
+
+    console.log(countBs("BBC"));
+    console.log(countChar("kakkerlak", "k"));
+
+</script>
+</body>
+</html>
