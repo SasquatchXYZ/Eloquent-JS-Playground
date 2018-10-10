@@ -15,6 +15,71 @@
 <h4>Deep Comparison</h4>
 
 <script>
+ // The Sum of a Range - Mine ==========================================================================================
+    function range(start, end) {
+        let x = [];
+        for (i = start; i <= end; i++) {
+             x.push(i);
+        }
+        return x;
+    }
+
+    console.log(range(1, 10));
+
+    function sum(array) {
+        let arrayTotal = 0;
+        for (k = 0; k < array.length; k++) {
+            arrayTotal += array[k];
+        }
+        return arrayTotal;
+    }
+
+    console.log(sum(range(1, 10)));
+
+    function newRange(start, end, step) {
+        if (step === null) step = 1;
+        let x = [];
+
+        if (step > 0) {
+            for  (j = start; j <= end; j += step) {
+                x.push(j);
+            }
+        } else {
+            for (j = start; j >= end; j += step) {
+                x.push(j);
+            }
+        }
+
+        return x;
+    }
+
+    console.log(newRange(5, 2, -1));
+
+    // Reversing an Array - Mine========================================================================================
+
+    function reverseArray(array) {
+        let x = [];
+        for (var h = 0; h < array.length; h++) {
+            x.unshift(array[h]);
+        }
+        return x;
+    }
+
+    console.log(reverseArray(["A", "B", "C"]));
+
+    function reverseArrayInPlace(array) {
+        let x = [];
+        for (var h = 0; h < array.length; h++) {
+            x.unshift(array[h]);
+        }
+        array = x;
+        return array;
+    }
+
+    var arrayValue = [1, 2, 3, 4, 5];
+    reverseArrayInPlace(arrayValue);
+    console.log(arrayValue);
+
 
 </script>
 </body>
