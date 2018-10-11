@@ -16,7 +16,7 @@
 
 <script>
  // The Sum of a Range - Mine ==========================================================================================
-    function range(start, end) {
+    /*function range(start, end) {
         let x = [];
         for (i = start; i <= end; i++) {
              x.push(i);
@@ -53,11 +53,11 @@
         return x;
     }
 
-    console.log(newRange(5, 2, -1));
+    console.log(newRange(5, 2, -1));*/
 
     // Reversing an Array - Mine========================================================================================
 
-    function reverseArray(array) {
+    /*function reverseArray(array) {
         let x = [];
         for (var h = 0; h < array.length; h++) {
             x.unshift(array[h]);
@@ -68,18 +68,94 @@
     console.log(reverseArray(["A", "B", "C"]));
 
     function reverseArrayInPlace(array) {
-        let x = [];
-        for (var h = 0; h < array.length; h++) {
-            x.unshift(array[h]);
+        for (var k = 0; k < Math.floor(array.length / 2); k++) {
+            var old = array[k];
+            array[k] = array[array.length - 1 - k];
+            array[array.length - 1 - k] = old;
         }
-        array = x;
         return array;
     }
 
     var arrayValue = [1, 2, 3, 4, 5];
     reverseArrayInPlace(arrayValue);
-    console.log(arrayValue);
+    console.log(arrayValue);*/
 
+    // Reversing an Array - Book Solution ==============================================================================
+    /*function reverseArray(array) {
+        var output = [];
+        for (var i = array.length-1; i >=0; i--) {
+            output.push(array[i]);
+        }
+        return output;
+    }
+
+    console.log(reverseArray(['A', 'B', 'C', 'D']));*/
+
+    // A List - Mine ===================================================================================================
+    /*function arrayToList(array) {
+        var list = null;
+        for (var i = array.length - 1; i >= 0; i--) {
+            list = {value: array[i], rest: list};
+        }
+        return list;
+    }
+
+    function listToArray(list) {
+        var array = [];
+        for (var node = list; node; node = node.rest) {
+            array.push(node.value);
+        }
+        return array;
+    }
+
+    function prepend(value, list) {
+        return {value: value, rest: list}
+    }
+
+    function nth(list, n) {
+        if (!list) {
+            return undefined;
+        } else if (n == 0) {
+            return list.value;
+        } else {
+            return nth(list.rest, n - 1);
+        }
+    }
+
+    console.log(arrayToList([10, 20]));
+    console.log(listToArray(arrayToList([10, 20, 30])));
+    console.log(prepend(10, prepend(20, null)));
+    console.log(nth(arrayToList([10, 20, 30]), 1));*/
+
+    // Deep Equal - Mine ===============================================================================================
+
+    function deepEqual(x, y) {
+        if (x === y) {
+            return true;
+        }
+        if ((x == null) || (y == null) || (typeof x != "object") || (typeof y != "object")) {
+            return false;
+        }
+        var xProps = 0, yProps = 0;
+
+        for (var prop in x) {
+            xProps++;
+        }
+        for (prop in y) {
+            yProps++;
+            if (!(prop in x) || !deepEqual(x[prop], y[prop])) {
+                return false;
+            }
+        }
+
+        return xProps == yProps;
+
+    }
+
+    var obj = {here: {is: "an"}, object: 2};
+    console.log(deepEqual(obj, obj));
+    console.log(deepEqual(obj, {here: 1, object: 2}));
+    console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 
 </script>
 </body>
