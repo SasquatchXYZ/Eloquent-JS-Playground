@@ -29,16 +29,84 @@
         return flat.concat(current);
     }, []));*/
 
+    // Mother-Child Age Difference - Mine ==============================================================================
+/*    function average(array) {
+        function plus(a, b) {return a + b}
+        return array.reduce(plus) / array.length;
+    }
+
+    let byName = {};
+    ancestry.forEach(function(person) {
+        byName[person.name] = person;
+    });*/
+    // Mother-Child Age Difference - Book ==============================================================================
+    function average(array) {
+        function plus(a, b) {return a + b}
+        return array.reduce(plus) / array.length;
+    }
+
+    let byName = {};
+    ancestry.forEach(function(person) {
+        byName[person.name] = person;
+    });
+
+    let differences = ancestry.filter(function(person) {
+        return byName[person.mother] != null;
+    }).map(function(person) {
+        return person.born - byName[person.mother.born];
+    });
+
+    console.log(average(differences));
+    // Historical Life Expectancy - Mine ===============================================================================
+/*    const average = (array) => {
+        let plus = (a, b) => {
+            return (a + b);
+        };
+        return (array.reduce(plus) / array.length);
+    };*/
+
+    // Historical Life Expectancy - Book ===============================================================================
+    function average(array) {
+        function plus(a, b) {return a + b}
+        return arra.reduce(plus) / array.length;
+    }
+
+    function groupBy(array, groupOf) {
+        let groups = {};
+        array.forEach(function(element) {
+            let groupName = groupOf(element);
+            if (groupName in groups)
+                groups[groupName].push(element);
+            else
+                groups[groupName] = [element];
+        });
+        return groups;
+    }
+
+    let byCentury = groupBy(ancestry, function(person) {
+        return Math.ceil(person.died / 100)
+    });
+
+    for (let century in byCentury) {
+        let ages = byCentury[century].map(function(person) {
+            return person.died - person.born;
+        });
+        console.log(century + ": " + average(ages));
+    }
 
     // Every and Then Some - Mine ======================================================================================
     const every = (array, value) => {
         for (let k = 0; k < array.length; k++) {
-
+            if (value !== array[k]) {
+                return false
+            }
         }
+        return true
     };
-
-    //console.log(every([NaN, NaN, NaN], isNaN));
-    //console.log(every([NaN, NaN, 4], isNaN));
+    console.log(every([2, 3, 4], 3)); //false
+    console.log(every([3, 3, 3], 3)); //true
+    console.log(every(['dog', 'cat', 'bird'], 'bird')); //false
+    console.log(every(['dog', 'dog', 'dog'], 'dog')); //true
 
     const some = (array, value) => {
         for (let k = 0; k < array.length; k++) {
@@ -48,11 +116,31 @@
         }
         return false;
     };
-    console.log(some([2, 3, 4], 3));
-    console.log(some([2, 3, 4], 7));
-    console.log(some(['dog', 'cat', 'bird'], 'bird'));
-    console.log(some(['bird', 'cat', 'dog'], 'horse'));
+    console.log(some([2, 3, 4], 3)); //true
+    console.log(some([2, 3, 4], 7)); //false
+    console.log(some(['dog', 'cat', 'bird'], 'bird')); //true
+    console.log(some(['bird', 'cat', 'dog'], 'horse')); //false
     // Every and Then Some - Book ======================================================================================
+/*    function every(array, predicate) {
+        for (var i = 0; i < array.length; i++) {
+            if (!predicate(array[i]))
+                return false;
+        }
+        return true;
+    }
+    console.log(every([NaN, NaN, NaN], isNaN)); //true
+    console.log(every([NaN, NaN, 4], isNaN)); //false
+
+    function some(array, predicate) {
+        for (var i = 0; i < array.length; i++) {
+            if (predicate(array[i]))
+                return true;
+        }
+        return false;
+    }
+    console.log(some([NaN, 3, 4], isNaN)); //true
+    console.log(some([2, 3, 4], isNaN)); //false*/
+
 
 </script>
 </body>
