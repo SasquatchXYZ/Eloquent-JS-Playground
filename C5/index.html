@@ -17,7 +17,6 @@
 
 <script>
     // Flattening Solution - Mine ======================================================================================
-    let arrays = [[1, 2, 3], [4, 5], [6]];
     const reducer = (accumulator, currentValue) => accumulator.concat(currentValue);
 
     console.log(arrays.reduce(reducer));
@@ -30,15 +29,15 @@
     }, []));*/
 
     // Mother-Child Age Difference - Mine ==============================================================================
-/*    function average(array) {
-        function plus(a, b) {return a + b}
-        return array.reduce(plus) / array.length;
-    }
+    /*    function average(array) {
+            function plus(a, b) {return a + b}
+            return array.reduce(plus) / array.length;
+        }
 
-    let byName = {};
-    ancestry.forEach(function(person) {
-        byName[person.name] = person;
-    });*/
+        let byName = {};
+        ancestry.forEach(function(person) {
+            byName[person.name] = person;
+        });*/
     // Mother-Child Age Difference - Book ==============================================================================
     function average(array) {
         function plus(a, b) {return a + b}
@@ -58,12 +57,12 @@
 
     console.log(average(differences));
     // Historical Life Expectancy - Mine ===============================================================================
-/*    const average = (array) => {
-        let plus = (a, b) => {
-            return (a + b);
-        };
-        return (array.reduce(plus) / array.length);
-    };*/
+    /*    const average = (array) => {
+            let plus = (a, b) => {
+                return (a + b);
+            };
+            return (array.reduce(plus) / array.length);
+        };*/
 
     // Historical Life Expectancy - Book ===============================================================================
     function average(array) {
@@ -94,6 +93,7 @@
         console.log(century + ": " + average(ages));
     }
 
+    let arrays = [[1, 2, 3], [4, 5], [6]];
     // Every and Then Some - Mine ======================================================================================
     const every = (array, value) => {
         for (let k = 0; k < array.length; k++) {
