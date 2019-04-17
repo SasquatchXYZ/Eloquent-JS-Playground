@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Chessboard</title>
+</head>
+<body>
+<script>
+
+  // My Solution
+  let row = '';
+  let size = 8;
+
+  for (let k = 0; k < size; k++) {
+    for (let n = 0; n < size; n++) {
+      if ((k + n) % 2 === 0)
+        row += ' ';
+      else
+        row += '#';
+    }
+    row += '\n';
+  }
+
+  console.log(row);
+
+  // Book Solution
+  /*let size = 8;
+
+  let board = "";
+
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      if ((x + y) % 2 == 0) {
+        board += " ";
+      } else {
+        board += "#";
+      }
+    }
+    board += "\n";
+  }
+
+  console.log(board);*/
+</script>
+</body>
+</html>
