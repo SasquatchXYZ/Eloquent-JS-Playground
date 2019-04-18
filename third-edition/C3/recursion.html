@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recursion</title>
+</head>
+<body>
+  <script>
+    
+    // My Solution
+    function isEven (num) {
+      if (num === 0 ) {
+        return true
+      } else if (num === 1) {
+        return false
+      } else {
+        return isEven(Math.abs(num - 2))
+      }
+    }
+
+    console.log(isEven(50));
+    console.log(isEven(75));
+    console.log(isEven(-1));
+    console.log(isEven(-2));
+
+  </script>
+</body>
+</html>
