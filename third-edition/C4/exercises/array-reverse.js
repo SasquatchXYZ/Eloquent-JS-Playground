@@ -6,9 +6,11 @@ const reverseArray = array => {
 };
 
 const reverseArrayInPlace = array => {
-  for (let k = array.length - 2, l = array.length - 1; k > l; k--) {
-    array.unshift(array[k]);
-    array.push(array[k]);
+
+  for (let k = array.length - 1, l = array.length - 1; k > 0; k--) {
+    let oldArray = array.splice(array[k - 2], 1);
+    let old = oldArray[0];
+    array.push(old);
   }
   return array
 };
